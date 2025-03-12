@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to bottom if content is short */
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eaefea;
+    text-align: center;
+    margin: 0;
+}
+header {
+    background-color: #fff;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Bold but not too heavy */
+    letter-spacing: 1.5px; /* Slight spacing for readability */
+}
+
+.logo {
+    width: 600px;
+    max-width: 50%;
+}
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.cta {
+    background-color: #e9afaf;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.cta:hover {
+    background-color: #6a4423;
+}
+footer {
+    margin-top: 40px;
+    padding: 10px;
+    background: #93ac93;
+    color: white;
+    text-align: left;
+}
+
+/* Style the email link like a button */
+#email-link {
+    font-weight: bold;
+    color: #3c2f2f;
+    text-decoration: none;
+    border: 2px solid #3c2f2f;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#email-link:hover {
+    background-color: #3c2f2f;
+    color: white;
+}
+
+/* Clipboard icon */
+.clipboard-icon {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#email-link:hover .clipboard-icon {
+    opacity: 1;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevents tooltip from interfering with clicks */
+}
