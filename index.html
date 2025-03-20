@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
+    <link rel="icon" type="image/x-icon" href="images/favicon.svg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doylestown Coffee Roasters</title>
@@ -10,46 +10,49 @@
 </head>
 <body>
     <header>
-        <img src="dcr_logo_large.png" alt="Doylestown Coffee Roasters Logo" class="logo">
+        <a href="./"><img src="images/dcr_logo_large.png" alt="Doylestown Coffee Roasters Logo" class="logo"></a>
     </header>
-    <div class="container">
-        <h1>Small batch, quality single origin coffees.</h1>
-        <h1>Freshly roasted locally.</h1>
-        <h1><b>Coming Summer 2025</b></h1>
-        <section>
-            <p>Get in touch: 
-                <a href="mailto:order@doylestowncoffeeroasters.com" 
-                   id="email-link" onclick="copyEmail(event)">
-                   order@doylestowncoffeeroasters.com
-                   <img src="clipboard-copy.svg" alt="Copy to clipboard" class="clipboard-icon">
-                </a>
-            </p>
-            <div id="tooltip" class="tooltip">Copied to clipboard</div>
-        </section>
-        
-        <script>
-            function copyEmail(event) {
-                event.preventDefault(); // Prevent default mailto action
-                const email = "order@doylestowncoffeeroasters.com";
-                
-                // Copy email to clipboard
-                navigator.clipboard.writeText(email).then(() => {
-                    const tooltip = document.getElementById("tooltip");
+    <div class="content">
+        <div class="container">
+            <h1>Small batch, quality single origin coffees.</h1>
+            <h1>Freshly roasted locally.</h1>
+            <h1><b>Coming Summer 2025</b></h1>
+            <p><a href="./beans">See what beans we're currently roasting</a></p>
+            <section>
+                <p>Get in touch: 
+                    <a href="mailto:order@doylestowncoffeeroasters.com" 
+                    id="email-link" onclick="copyEmail(event)">
+                    order@doylestowncoffeeroasters.com
+                    <img src="images/clipboard-copy.svg" alt="Copy to clipboard" class="clipboard-icon">
+                    </a>
+                </p>
+                <div id="tooltip" class="tooltip">Copied to clipboard</div>
+            </section>
+            
+            <script>
+                function copyEmail(event) {
+                    event.preventDefault(); // Prevent default mailto action
+                    const email = "order@doylestowncoffeeroasters.com";
                     
-                    // Position tooltip near the mouse cursor
-                    tooltip.style.left = event.pageX + "px";
-                    tooltip.style.top = event.pageY - 30 + "px"; // Slightly above the cursor
-                    tooltip.style.opacity = 1; // Make it visible
-                    
-                    // Hide tooltip after 2 seconds
-                    setTimeout(() => {
-                        tooltip.style.opacity = 0;
-                    }, 2000);
-                }).catch(err => {
-                    console.error("Failed to copy email:", err);
-                });
-            }
-        </script>
+                    // Copy email to clipboard
+                    navigator.clipboard.writeText(email).then(() => {
+                        const tooltip = document.getElementById("tooltip");
+                        
+                        // Position tooltip near the mouse cursor
+                        tooltip.style.left = event.pageX + "px";
+                        tooltip.style.top = event.pageY - 30 + "px"; // Slightly above the cursor
+                        tooltip.style.opacity = 1; // Make it visible
+                        
+                        // Hide tooltip after 2 seconds
+                        setTimeout(() => {
+                            tooltip.style.opacity = 0;
+                        }, 2000);
+                    }).catch(err => {
+                        console.error("Failed to copy email:", err);
+                    });
+                }
+            </script>
+        </div>
     </div>
     <footer>
         &copy; 2025 Doylestown Coffee Roasters - All Rights Reserved.
