@@ -1,0 +1,21 @@
+---
+import styleSheet from '../styles/styles.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="/favicon.svg">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Doylestown Coffee Roasters</title>
+		<link rel="stylesheet" href={styleSheet}>
+	</head>
+	<body>
+		<slot />
+		<footer>
+			&copy; 2025 Doylestown Coffee Roasters - All Rights Reserved.
+		</footer>
+	</body>
+</html>

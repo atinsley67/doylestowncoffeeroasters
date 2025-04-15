@@ -10,7 +10,7 @@ body {
 }
 header {
     background-color: #fff;
-    padding: 20px;
+    padding: 10px;
 }
 
 h1, h2, h3 {
@@ -20,8 +20,9 @@ h1, h2, h3 {
 }
 
 .logo {
-    width: 600px;
-    max-width: 90%;
+    width: 500px;
+    max-width: 80%;
+    margin: 15px;
 }
 
 .content-image {
@@ -29,11 +30,13 @@ h1, h2, h3 {
     max-width: 90%;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    object-fit: contain;
 }
 
 .logo-page {
     width: 250px;
     max-width: 60%;
+    margin: 15px;
 }
 
 .content {
@@ -133,6 +136,53 @@ a:link {
     transition: opacity 0.3s ease-in-out;
     pointer-events: none; /* Prevents tooltip from interfering with clicks */
 }
+nav {
+    text-align: center;
+    padding: 0;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav li {
+    padding: 0.5rem 1rem;
+    position: relative;
+  }
+
+  /* Add a separator (|) between menu items */
+  nav li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -0.6rem;
+    color: #ccc;
+  }
+
+  /* Ensure all links have the same color */
+  nav a, nav a:visited , nav a:link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+  }
+
+  /* Hover and active effects */
+  nav a:hover, nav a:focus{
+    color: #8B5E3C;
+  }
+
+  nav a:active {
+    color: #6A412D; /* Slightly darker for a subtle click effect */
+  }
+
+  /* Active page highlighting */
+  nav li.active a {
+    text-decoration: underline;
+  }
 
 /* For mobile devices */
 @media (max-width: 768px) {

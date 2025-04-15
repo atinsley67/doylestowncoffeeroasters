@@ -1,0 +1,44 @@
+---
+import ClipboardCopyIcon from '../assets/clipboard-copy.svg';
+const { textPrefix, emailAddress } = Astro.props;
+---
+<div>
+    <section>
+        <p>
+            {textPrefix} 
+            <a href=`mailto:${emailAddress}` id="email-link">
+                {emailAddress}
+                <img src={ClipboardCopyIcon.src} alt="Copy to clipboard" class="clipboard-icon">
+            </a>
+        </p>
+        <div id="tooltip" class="tooltip">Copied to clipboard</div>
+    </section>
+
+    <script define:vars={{ emailAddress }}>
+        const button = document.getElementById('email-link');
+
+        function copyEmail(event) {
+            event.preventDefault(); // Prevent default mailto action
+            const email = emailAddress;
+            
+            // Copy email to clipboard
+            navigator.clipboard.writeText(email).then(() => {
+                const tooltip = document.getElementById("tooltip");
+                
+                // Position tooltip near the mouse cursor
+                tooltip.style.left = event.pageX + "px";
+                tooltip.style.top = event.pageY - 30 + "px"; // Slightly above the cursor
+                tooltip.style.opacity = 1; // Make it visible
+                
+                // Hide tooltip after 2 seconds
+                setTimeout(() => {
+                    tooltip.style.opacity = 0;
+                }, 2000);
+            }).catch(err => {
+                console.error("Failed to copy email:", err);
+            });
+        }
+
+        button.addEventListener('click', copyEmail);
+    </script>
+</div>

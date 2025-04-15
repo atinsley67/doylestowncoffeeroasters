@@ -1,0 +1,20 @@
+---
+import HomeLayout from '../layouts/HomeLayout.astro';
+import ClipboardCopyIcon from '../assets/clipboard-copy.svg';
+import CopyEmail from '../components/CopyEmail.astro';
+---
+
+<HomeLayout>
+	<div class="content">
+        <div class="container">
+            <h1>Small batch, quality single origin coffees.</h1>
+            <h1>Freshly roasted locally.</h1>
+            <h1><b>Coming Summer 2025</b></h1>
+            <p><a href="./beans">See what beans we're currently roasting</a></p>
+            <CopyEmail
+                textPrefix="Get in touch:"
+                emailAddress="order@doylestowncoffeeroasters.com"
+            />
+        </div>
+    </div>
+</HomeLayout>

@@ -1,0 +1,19 @@
+---
+const currentPage = Astro.url.pathname;
+---
+<nav>
+  <ul>
+    <li class={currentPage === "/" ? "active" : ""}>
+      <a href="/">Home</a>
+    </li>
+    <li class={currentPage === "/beans/" ? "active" : ""}>
+      <a href="/beans/">Beans</a>
+    </li>
+    <li class={currentPage === "/about/" ? "active" : ""}>
+      <a href="/about/">About</a>
+    </li>
+    <li class={currentPage === "/contact/" ? "active" : ""}>
+      <a href="/contact/">Contact</a>
+    </li>
+  </ul>
+</nav>
